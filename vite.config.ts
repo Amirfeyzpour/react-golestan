@@ -3,7 +3,6 @@ import babel from "@rolldown/plugin-babel";
 import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 
-// https://vite.dev/config/
 export default defineConfig(({ command }) => {
   return {
     plugins: [
@@ -11,5 +10,6 @@ export default defineConfig(({ command }) => {
       babel({ presets: [reactCompilerPreset()] }),
       tailwindcss(),
     ],
-  base: command === "serve" ? "/" : "/react-golestan/",
+    base: command === "serve" ? "/" : "/react-golestan/",
+  };
 });
